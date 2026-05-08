@@ -4,693 +4,842 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>제이엠오피스 | 부산 사무기기 렌탈 전문</title>
-<meta name="description" content="부산 동래 사무기기 렌탈 전문 제이엠오피스. 복사기·프린터·복합기 임대/대여. 프리미엄 상품, 합리적 렌탈." />
-<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<meta name="description" content="부산 동래 사무기기 렌탈 전문 제이엠오피스. 복사기·프린터·복합기·업무용 PC·디스플레이 임대/대여. 프리미엄 상품, 합리적 렌탈." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 <style>
   :root {
-    --navy: #1B3A8A;
-    --navy-deep: #0F2563;
-    --yellow: #FEE500;
-    --red: #E53935;
-    --bg: #FFFFFF;
-    --bg-soft: #F6F7FB;
-    --line: #E6E8EE;
-    --ink: #14161B;
-    --ink-soft: #555A66;
-    --radius: 14px;
-    --shadow: 0 6px 24px rgba(20, 30, 60, 0.06);
+    --bg: #FFF9EE;
+    --bg-2: #FFF2D9;
+    --card: #FFFFFF;
+    --ink: #1F1B12;
+    --ink-soft: #6B6453;
+    --line: #EDE3CC;
+    --accent: #FF7A3D;     /* warm orange */
+    --accent-soft: #FFD9C2;
+    --green: #2E7A5F;
   }
-  * { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-    color: var(--ink);
-    background: var(--bg);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+    font-family: "Pretendard Variable", "Plus Jakarta Sans", -apple-system, sans-serif;
+    color: var(--ink); background: var(--bg);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; display: block; }
-  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
-  /* Top bar */
-  .topbar {
-    background: var(--navy-deep);
-    color: #B7C4E8;
-    font-size: 13px;
-  }
-  .topbar .inner {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 8px 24px; max-width: 1160px; margin: 0 auto;
-  }
-  .topbar a { color: #B7C4E8; }
-  .topbar a:hover { color: #fff; }
-
-  /* Header */
-  header.gnb {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: saturate(180%) blur(12px);
-    border-bottom: 1px solid var(--line);
+  /* GNB */
+  .gnb {
+    background: var(--bg);
+    position: sticky; top: 0; z-index: 30;
+    padding: 18px 0;
   }
   .gnb .inner {
     display: flex; align-items: center; justify-content: space-between;
-    height: 72px; max-width: 1160px; margin: 0 auto; padding: 0 24px;
+    background: var(--card); border-radius: 999px;
+    padding: 8px 8px 8px 28px; box-shadow: 0 4px 16px rgba(31,27,18,0.05);
+    border: 1px solid var(--line);
+    max-width: 1200px; margin: 0 auto;
   }
-  .logo {
-    display: flex; align-items: baseline; gap: 8px;
-    font-weight: 800; font-size: 26px; letter-spacing: -0.02em; color: var(--navy);
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: -0.02em; }
+  .brand .dot { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); display: inline-flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 800; }
+  .brand small { font-weight: 500; font-size: 12px; color: var(--ink-soft); margin-left: 4px; }
+  .nav { display: flex; gap: 4px; }
+  .nav a {
+    font-size: 14px; color: var(--ink-soft); font-weight: 600;
+    padding: 8px 14px; border-radius: 999px; transition: all 0.15s;
   }
-  .logo small { font-size: 14px; color: var(--ink-soft); font-weight: 600; letter-spacing: 0; }
-  .nav { display: flex; gap: 28px; }
-  .nav a { color: var(--ink); font-weight: 600; font-size: 15px; }
-  .nav a:hover { color: var(--navy); }
-  .cta-phone {
-    background: var(--navy); color: #fff;
-    padding: 10px 18px; border-radius: 999px;
-    font-weight: 700; font-size: 14px;
-  }
-  .cta-phone:hover { background: var(--navy-deep); }
-  .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
-
-  /* Hero */
-  .hero {
-    background:
-      radial-gradient(60% 80% at 100% 0%, rgba(27,58,138,0.08), transparent 60%),
-      linear-gradient(180deg, #FAFBFF 0%, #FFFFFF 100%);
-    padding: 80px 0 64px;
-  }
-  .hero .grid {
-    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center;
-  }
-  .badge {
-    display: inline-block; background: #EEF2FF; color: var(--navy);
-    padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
-    margin-bottom: 18px;
-  }
-  .hero h1 {
-    font-size: 52px; line-height: 1.15; letter-spacing: -0.025em;
-    margin: 0 0 20px; font-weight: 800;
-  }
-  .hero h1 .accent { color: var(--navy); }
-  .hero p.lead {
-    font-size: 18px; color: var(--ink-soft); margin: 0 0 32px;
-  }
-  .hero p.lead b { color: var(--ink); font-weight: 700; }
-  .hero p.lead .red { color: var(--red); font-weight: 700; }
-  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .nav a:hover { background: var(--bg-2); color: var(--ink); }
+  .gnb-cta { display: flex; gap: 8px; }
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 16px 28px; border-radius: 12px; font-weight: 700; font-size: 16px;
-    transition: transform 0.05s ease;
+    padding: 12px 22px; border-radius: 999px; font-weight: 700; font-size: 14px;
+    transition: all 0.15s; border: 0; cursor: pointer; font-family: inherit;
   }
-  .btn:active { transform: translateY(1px); }
-  .btn-primary { background: var(--navy); color: #fff; }
-  .btn-primary:hover { background: var(--navy-deep); }
-  .btn-kakao { background: var(--yellow); color: #181600; }
-  .btn-kakao:hover { background: #FFD600; }
-  .btn-ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
-  .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+  .btn-primary { background: var(--ink); color: white; }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-accent { background: var(--accent); color: white; }
+  .btn-accent:hover { background: #FF6620; }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .btn-yellow { background: #FFE066; color: var(--ink); }
+  .btn-yellow:hover { background: #FFD93D; }
 
-  .hero-card {
-    background: #fff; border: 1px solid var(--line); border-radius: 20px;
-    padding: 28px; box-shadow: var(--shadow);
+  /* Hero */
+  .hero { padding: 60px 0 80px; position: relative; }
+  .hero .grid {
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center;
   }
-  .hero-card h3 { margin: 0 0 8px; font-size: 18px; color: var(--ink); }
-  .hero-card .tel-big {
-    font-size: 36px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em;
-    margin: 8px 0 4px;
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--card); padding: 8px 16px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 24px;
+    border: 1px solid var(--line);
   }
-  .hero-card .tel-sub { color: var(--ink-soft); font-size: 14px; margin-bottom: 16px; }
-  .hero-card .quick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .hero-card .quick a {
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-    padding: 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
+  .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+  .hero h1 {
+    font-size: 72px; line-height: 1.05; letter-spacing: -0.035em;
+    font-weight: 800; margin: 0 0 24px;
+    text-wrap: pretty;
   }
-  .hero-card .quick .kakao { background: var(--yellow); color: #181600; }
-  .hero-card .quick .form { background: var(--navy); color: #fff; }
+  .hero h1 .acc {
+    background: var(--accent); color: white; padding: 0 12px;
+    border-radius: 16px; display: inline-block;
+    transform: rotate(-1.5deg);
+  }
+  .hero h1 .underline {
+    background: linear-gradient(transparent 60%, #FFE066 60%);
+    padding: 0 4px;
+  }
+  .hero p.lead {
+    font-size: 18px; color: var(--ink-soft); margin: 0 0 32px;
+    max-width: 480px; line-height: 1.65;
+  }
+  .hero p.lead b { color: var(--ink); font-weight: 700; }
+  .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .hero-actions .btn { padding: 16px 26px; font-size: 15px; }
+  .hero-actions .meta { font-size: 13px; color: var(--ink-soft); margin-left: 8px; }
+
+  /* Hero card cluster */
+  .hero-stack { position: relative; height: 520px; }
+  .hcard {
+    position: absolute; background: var(--card);
+    border-radius: 24px; box-shadow: 0 12px 40px rgba(31,27,18,0.08);
+    padding: 22px; border: 1px solid var(--line);
+  }
+  .hcard.main {
+    top: 0; left: 8%; width: 75%; height: 320px;
+    background: linear-gradient(160deg, var(--accent-soft) 0%, #FFE3CB 100%);
+    padding: 28px;
+    overflow: hidden;
+  }
+  .hcard.main::after {
+    content: ''; position: absolute; right: -40px; bottom: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(255,122,61,0.18) 0%, transparent 70%);
+  }
+  .hcard.main .label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  .hcard.main .device {
+    font-size: 28px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .hcard.main .desc { color: var(--ink-soft); font-size: 14px; max-width: 240px; line-height: 1.55; }
+  .hcard.main .placeholder-img {
+    margin-top: 18px; width: 100%; height: 130px; border-radius: 14px;
+    overflow: hidden; border: 1px solid rgba(31,27,18,0.08);
+  }
+  .hcard.main .placeholder-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .hcard.tel {
+    bottom: 30px; right: 0; width: 240px;
+    background: var(--ink); color: white;
+    transform: rotate(3deg);
+  }
+  .hcard.tel .lab { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .hcard.tel .num { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
+  .hcard.tel .sub { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+  .hcard.review {
+    top: 40px; right: 0; width: 230px;
+    transform: rotate(-2deg);
+  }
+  .hcard.review .stars { color: #FFB938; font-size: 13px; margin-bottom: 6px; letter-spacing: 1px; }
+  .hcard.review p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink); }
+  .hcard.review .who { margin-top: 10px; font-size: 11px; color: var(--ink-soft); font-weight: 600; }
+
+  .hcard.qty {
+    bottom: 10px; left: 4%; padding: 16px 22px;
+    display: flex; align-items: center; gap: 18px;
+    transform: rotate(-2deg);
+  }
+  .hcard.qty .v { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); }
+  .hcard.qty .v sub { font-size: 11px; color: var(--ink-soft); margin-left: 2px; vertical-align: baseline; font-weight: 600; }
+  .hcard.qty .l { font-size: 11px; color: var(--ink-soft); font-weight: 600; line-height: 1.4; }
 
   /* Section base */
-  section { padding: 80px 0; }
-  .section-head { text-align: center; margin-bottom: 48px; }
-  .section-head .eyebrow {
-    color: var(--navy); font-weight: 700; font-size: 14px; letter-spacing: 0.08em;
-    text-transform: uppercase; margin-bottom: 8px;
+  section { padding: 96px 0; }
+  .s-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--card); padding: 7px 14px; border-radius: 999px;
+    font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 20px;
+    border: 1px solid var(--line);
   }
-  .section-head h2 {
-    font-size: 36px; letter-spacing: -0.02em; margin: 0 0 12px; font-weight: 800;
+  .s-eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  .s-title {
+    font-size: 48px; line-height: 1.1; letter-spacing: -0.03em;
+    font-weight: 800; margin: 0 0 20px; max-width: 760px;
+    text-wrap: pretty;
   }
-  .section-head p { color: var(--ink-soft); font-size: 16px; margin: 0; }
+  .s-title .acc {
+    background: var(--accent); color: white; padding: 0 10px;
+    border-radius: 14px; display: inline-block;
+    transform: rotate(-1deg);
+  }
+  .s-title .uy { background: linear-gradient(transparent 60%, #FFE066 60%); padding: 0 6px; }
+  .s-sub { font-size: 17px; color: var(--ink-soft); max-width: 560px; line-height: 1.6; }
 
-  /* Why us */
-  .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .feature {
-    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 28px 24px; transition: all 0.2s;
+  /* Why us — soft cards */
+  .why { background: var(--bg); }
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+  .pillar {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 24px; padding: 28px;
+    transition: all 0.2s ease; position: relative; overflow: hidden;
+    display: flex; flex-direction: column; min-height: 230px;
   }
-  .feature:hover { border-color: var(--navy); transform: translateY(-2px); box-shadow: var(--shadow); }
-  .feature .icon {
-    width: 48px; height: 48px; border-radius: 12px; background: #EEF2FF;
+  .pillar:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(31,27,18,0.06); }
+  .pillar.tinted-1 { background: var(--accent-soft); border-color: transparent; }
+  .pillar.tinted-2 { background: #FFE066; border-color: transparent; }
+  .pillar.tinted-3 { background: #D6EFE0; border-color: transparent; }
+  .pillar .pchip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.6); padding: 6px 12px; border-radius: 999px;
+    font-size: 11px; font-weight: 700; color: var(--ink); width: fit-content;
+    margin-bottom: 14px; letter-spacing: 0.04em;
+  }
+  .pillar h4 { margin: 0 0 8px; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+  .pillar p { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
+  .pillar .pmetric {
+    margin-top: auto; padding-top: 18px;
+    font-size: 13px; font-weight: 700; color: var(--ink);
+  }
+  .pillar .pmetric b { color: var(--accent); font-weight: 800; }
+  .pillar.tinted-1 .pmetric b, .pillar.tinted-2 .pmetric b, .pillar.tinted-3 .pmetric b { color: var(--ink); }
+
+  /* Products — playful cards */
+  .products .head { margin-bottom: 56px; }
+  .pgrid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 16px; }
+  .pcard {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 24px; overflow: hidden;
+    display: flex; flex-direction: column; transition: all 0.2s ease;
+  }
+  .pcard:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(31,27,18,0.06); }
+  .pcard.feature { grid-row: span 2; grid-column: span 1; }
+  .pcard .pthumb {
+    aspect-ratio: 4/3; position: relative; overflow: hidden;
+    background: var(--accent-soft);
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 18px; flex-direction: column; align-items: stretch;
+  }
+  .pcard.feature .pthumb { aspect-ratio: 5/4; }
+  .pcard.col-2 .pthumb { background: #D6EFE0; }
+  .pcard.col-3 .pthumb { background: #FFE066; }
+  .pcard.col-4 .pthumb { background: #DDE7FF; }
+  .pcard.col-5 .pthumb { background: #F6D6E8; }
+  .pcard .pthumb .ptag {
+    align-self: flex-start;
+    background: var(--ink); color: white;
+    padding: 5px 12px; border-radius: 999px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
+  }
+  .pcard .pthumb .pmock {
+    margin: auto auto 0; width: 60%; height: 60%;
+    background:
+      repeating-linear-gradient(45deg, transparent 0 12px, rgba(31,27,18,0.07) 12px 13px);
+    border: 2px solid rgba(31,27,18,0.15);
+    border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
-    color: var(--navy); font-size: 22px; margin-bottom: 16px; font-weight: 800;
+    font-family: monospace; font-size: 10px; letter-spacing: 0.1em;
+    color: rgba(31,27,18,0.5);
   }
-  .feature h4 { margin: 0 0 8px; font-size: 17px; font-weight: 700; }
-  .feature p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+  .pcard .pthumb .pimg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 0;
+  }
+  .pcard .pthumb .ptag { position: relative; z-index: 1; }
+  .pcard .pthumb::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(31,27,18,0.15) 100%);
+    z-index: 0; pointer-events: none;
+  }
+  .pcard .pbody { padding: 22px 22px 24px; flex: 1; display: flex; flex-direction: column; }
+  .pcard h3 { margin: 0 0 6px; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+  .pcard.feature h3 { font-size: 30px; }
+  .pcard p { margin: 0 0 16px; color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
+  .pcard .prow {
+    margin-top: auto; display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .pcard .price { font-size: 13px; color: var(--ink-soft); }
+  .pcard .price b { color: var(--ink); font-weight: 800; font-size: 16px; letter-spacing: -0.01em; }
+  .pcard .more { font-size: 13px; color: var(--accent); font-weight: 700; }
 
-  /* Products */
-  .products-section { background: var(--bg-soft); }
-  .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .product {
-    background: #fff; border-radius: var(--radius); overflow: hidden;
-    border: 1px solid var(--line); display: flex; flex-direction: column;
-    transition: all 0.2s;
-  }
-  .product:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-  .product .thumb {
-    height: 200px; background: linear-gradient(135deg, #E8EEF8 0%, #F5F7FB 100%);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 64px; color: var(--navy);
-  }
-  .product .body { padding: 24px; }
-  .product h4 { margin: 0 0 8px; font-size: 19px; font-weight: 700; }
-  .product .tag { display: inline-block; background: #EEF2FF; color: var(--navy); padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 12px; }
-  .product p { margin: 0 0 16px; color: var(--ink-soft); font-size: 14px; }
-  .product .more { color: var(--navy); font-weight: 700; font-size: 14px; }
-
-  /* Process */
-  .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
+  /* Process — speech bubbles */
+  .process { background: var(--bg-2); border-radius: 32px; margin: 0 32px; padding: 80px 0; }
+  .process .wrap { max-width: 1136px; padding: 0 32px; }
+  .steps { margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
   .step {
-    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 28px 20px; text-align: center; position: relative;
+    background: var(--card); border-radius: 22px; padding: 26px;
+    border: 1px solid var(--line); position: relative;
+    display: flex; flex-direction: column; min-height: 220px;
   }
   .step .num {
-    width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff;
+    width: 36px; height: 36px; border-radius: 12px;
+    background: var(--ink); color: white;
     display: inline-flex; align-items: center; justify-content: center;
-    font-weight: 800; margin-bottom: 14px;
+    font-weight: 800; font-size: 14px; margin-bottom: 16px;
   }
-  .step h4 { margin: 0 0 6px; font-size: 16px; font-weight: 700; }
-  .step p { margin: 0; color: var(--ink-soft); font-size: 13px; }
+  .step:nth-child(1) .num { background: var(--accent); }
+  .step:nth-child(2) .num { background: #FFD93D; color: var(--ink); }
+  .step:nth-child(3) .num { background: var(--green); }
+  .step:nth-child(4) .num { background: var(--ink); }
+  .step h4 { margin: 0 0 6px; font-size: 18px; font-weight: 800; letter-spacing: -0.015em; }
+  .step p { margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
+  .step .ttime {
+    margin-top: auto; padding-top: 16px;
+    font-size: 12px; font-weight: 700; color: var(--accent);
+  }
+
+  /* Cases */
+  .cases .head { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: end; margin-bottom: 36px; }
+  .case-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+  .case-tab {
+    background: var(--card); border: 1px solid var(--line);
+    padding: 9px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;
+    cursor: pointer; color: var(--ink); transition: all 0.15s;
+    font-family: inherit;
+  }
+  .case-tab:hover { border-color: var(--ink); }
+  .case-tab.active { background: var(--ink); color: white; border-color: var(--ink); }
+
+  .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .case {
+    background: var(--card); border: 1px solid var(--line); border-radius: 22px;
+    overflow: hidden; display: flex; flex-direction: column; color: inherit;
+    transition: all 0.2s;
+  }
+  .case:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(31,27,18,0.07); }
+  .case .cthumb { aspect-ratio: 16/10; overflow: hidden; background: var(--bg-2); }
+  .case .cthumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .case:hover .cthumb img { transform: scale(1.04); }
+  .case .cbody { padding: 18px 20px 22px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .case .ccat { display: inline-flex; align-items: center; gap: 6px; background: var(--bg-2); padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; color: var(--ink); width: fit-content; }
+  .case h4 { margin: 0; font-size: 15px; font-weight: 700; line-height: 1.45;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .case .cdate { font-size: 12px; color: var(--ink-soft); margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--line); }
 
   /* CTA banner */
   .cta-banner {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
-    color: #fff; border-radius: 24px; padding: 56px 48px;
-    display: flex; justify-content: space-between; align-items: center; gap: 32px;
-    flex-wrap: wrap;
+    background: var(--ink); color: white;
+    border-radius: 32px; padding: 60px;
+    display: grid; grid-template-columns: 1.5fr 1fr; gap: 56px; align-items: center;
+    position: relative; overflow: hidden;
   }
-  .cta-banner h3 { font-size: 28px; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.02em; }
-  .cta-banner p { margin: 0; color: #C9D2EA; }
-  .cta-banner .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-  .cta-banner .btn-primary { background: #fff; color: var(--navy); }
-  .cta-banner .btn-primary:hover { background: #F0F4FF; }
+  .cta-banner::before {
+    content: ''; position: absolute; right: -100px; top: -100px;
+    width: 360px; height: 360px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,122,61,0.4) 0%, transparent 60%);
+  }
+  .cta-banner h2 {
+    margin: 0; font-size: 44px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.1;
+  }
+  .cta-banner h2 .acc { background: var(--accent); padding: 0 10px; border-radius: 14px; display: inline-block; transform: rotate(-1deg); }
+  .cta-banner p { margin: 16px 0 0; color: rgba(255,255,255,0.7); font-size: 16px; }
+  .cta-banner .actions { display: flex; flex-direction: column; gap: 10px; align-items: stretch; position: relative; }
+  .cta-banner .actions .btn { justify-content: center; padding: 16px 24px; font-size: 15px; }
 
-  /* Contact form */
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-  .contact-info h3 { margin: 0 0 16px; font-size: 22px; }
+  /* Contact */
+  .contact .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .info-card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 24px; padding: 32px;
+  }
+  .info-card h3 { margin: 0 0 6px; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+  .info-card .addr { color: var(--ink-soft); margin: 0 0 24px; font-size: 14px; }
   .info-row {
-    display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line);
+    display: grid; grid-template-columns: 100px 1fr; gap: 16px;
+    padding: 14px 0; border-bottom: 1px solid var(--line); align-items: baseline;
   }
-  .info-row:last-child { border-bottom: 0; }
-  .info-row .label { font-weight: 700; color: var(--navy); min-width: 80px; font-size: 14px; }
-  .info-row .value { color: var(--ink); font-size: 15px; }
-  form.inquiry {
-    background: var(--bg-soft); padding: 32px; border-radius: var(--radius);
-  }
-  form.inquiry label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
-  form.inquiry input, form.inquiry select, form.inquiry textarea {
-    width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px;
-    font-family: inherit; font-size: 15px; margin-bottom: 16px; background: #fff;
-  }
-  form.inquiry textarea { resize: vertical; min-height: 100px; }
-  form.inquiry input:focus, form.inquiry select:focus, form.inquiry textarea:focus {
-    outline: none; border-color: var(--navy);
-  }
-  form.inquiry button {
-    width: 100%; padding: 16px; background: var(--navy); color: #fff; border: 0;
-    border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;
-  }
-  form.inquiry button:hover { background: var(--navy-deep); }
+  .info-row:last-of-type { border-bottom: 0; }
+  .info-row .k { font-size: 13px; color: var(--ink-soft); font-weight: 600; }
+  .info-row .v { font-size: 14px; color: var(--ink); font-weight: 600; }
+  .info-card .actions { margin-top: 24px; display: flex; gap: 8px; flex-wrap: wrap; }
 
-  /* Posts section */
-  .post-tabs {
-    display: flex; gap: 8px; justify-content: center; margin-bottom: 36px; flex-wrap: wrap;
+  form.q {
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: 24px; padding: 32px;
   }
-  .post-tab {
-    padding: 10px 22px; border: 1px solid var(--line); background: #fff;
-    border-radius: 999px; font-size: 14px; font-weight: 600; cursor: pointer;
-    font-family: inherit; color: var(--ink); transition: all 0.15s;
+  form.q h3 { margin: 0 0 24px; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+  form.q label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+  form.q input, form.q select, form.q textarea {
+    width: 100%; padding: 14px 16px; background: white;
+    border: 1px solid var(--line); border-radius: 14px;
+    font-family: inherit; font-size: 15px; margin-bottom: 16px;
+    color: var(--ink);
   }
-  .post-tab:hover { border-color: var(--navy); color: var(--navy); }
-  .post-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
-
-  .post-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  form.q textarea { resize: vertical; min-height: 90px; }
+  form.q input:focus, form.q select:focus, form.q textarea:focus { outline: none; border-color: var(--accent); }
+  form.q button {
+    width: 100%; padding: 16px; background: var(--accent); color: white;
+    border: 0; border-radius: 14px; font-size: 16px; font-weight: 700;
+    cursor: pointer; transition: all 0.15s; font-family: inherit;
   }
-  .post-card {
-    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-    overflow: hidden; transition: all 0.2s; display: flex; flex-direction: column;
-    color: inherit;
-  }
-  .post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-  .post-card .thumb {
-    height: 180px; overflow: hidden; background: #F5F7FB;
-  }
-  .post-card .thumb img {
-    width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;
-  }
-  .post-card:hover .thumb img { transform: scale(1.05); }
-  .post-card .thumb-placeholder {
-    height: 180px; display: flex; align-items: center; justify-content: center;
-    font-size: 48px; background: linear-gradient(135deg, #E8EEF8, #F5F7FB); color: var(--navy);
-  }
-  .post-card .body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-  .post-card .cat {
-    display: inline-block; background: #EEF2FF; color: var(--navy);
-    padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700;
-    margin-bottom: 10px; align-self: flex-start;
-  }
-  .post-card h4 {
-    margin: 0 0 10px; font-size: 16px; line-height: 1.4; font-weight: 700;
-    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .post-card p {
-    margin: 0 0 12px; font-size: 13px; color: var(--ink-soft); line-height: 1.55;
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
-    overflow: hidden; flex: 1;
-  }
-  .post-card .date { font-size: 12px; color: var(--ink-soft); }
-  .post-empty {
-    grid-column: 1 / -1; text-align: center; color: var(--ink-soft); padding: 40px;
-  }
+  form.q button:hover { background: #FF6620; }
 
   /* Footer */
-  footer {
-    background: #0B1530; color: #B7C0DA; padding: 56px 0 32px;
-  }
-  footer .grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; }
-  footer h5 { color: #fff; margin: 0 0 16px; font-size: 16px; }
-  footer p, footer li { font-size: 14px; line-height: 1.8; margin: 0; }
-  footer ul { padding: 0; list-style: none; }
-  footer .biz-info { font-size: 13px; line-height: 1.7; }
-  footer .copyright {
-    margin-top: 40px; padding-top: 24px; border-top: 1px solid #1E2A4D;
-    text-align: center; font-size: 13px; color: #6E7AA0;
-  }
+  footer { padding: 64px 0 32px; }
+  footer .grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+  footer h5 { font-size: 12px; font-weight: 700; color: var(--ink); margin: 0 0 14px; letter-spacing: 0.02em; }
+  footer .colophon { font-size: 18px; line-height: 1.5; max-width: 360px; font-weight: 600; }
+  footer .colophon .acc { background: var(--accent); color: white; padding: 0 8px; border-radius: 8px; display: inline-block; transform: rotate(-1deg); }
+  footer ul { list-style: none; padding: 0; margin: 0; }
+  footer li { font-size: 13px; line-height: 2; color: var(--ink-soft); }
+  footer .baseline { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); }
 
-  /* Floating */
-  .floating {
-    position: fixed; right: 20px; bottom: 20px; z-index: 100;
-    display: flex; flex-direction: column; gap: 10px;
-  }
+  .floating { position: fixed; right: 24px; bottom: 24px; z-index: 50; display: flex; flex-direction: column; gap: 10px; }
   .floating a {
-    width: 56px; height: 56px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); font-size: 22px;
-    transition: transform 0.15s;
+    display: flex; align-items: center; gap: 8px; padding: 12px 18px;
+    border-radius: 999px; font-weight: 700; font-size: 13px;
+    box-shadow: 0 10px 28px rgba(31,27,18,0.15);
   }
-  .floating a:hover { transform: scale(1.05); }
-  .float-tel { background: var(--navy); color: #fff; }
-  .float-kakao { background: var(--yellow); color: #181600; }
+  .floating a.tel { background: var(--ink); color: white; }
+  .floating a.kakao { background: #FFE066; color: var(--ink); }
 
-  /* Mobile */
-  @media (max-width: 900px) {
-    .hero { padding: 56px 0 40px; }
-    .hero .grid { grid-template-columns: 1fr; gap: 32px; }
-    .hero h1 { font-size: 36px; }
+  @media (max-width: 960px) {
+    .hero .grid, .cases .head, .cta-banner, .contact .grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 48px; }
+    .s-title { font-size: 36px; }
+    .pillars, .pgrid, .steps, .case-grid, footer .grid { grid-template-columns: 1fr 1fr; }
+    .pcard.feature { grid-row: auto; grid-column: span 2; }
     .nav { display: none; }
-    .cta-phone { display: none; }
-    .menu-toggle { display: block; }
-    section { padding: 56px 0; }
-    .section-head h2 { font-size: 28px; }
-    .features, .products, .process, .post-grid { grid-template-columns: 1fr 1fr; }
-    .contact-grid, footer .grid { grid-template-columns: 1fr; gap: 24px; }
-    .cta-banner { padding: 36px 24px; flex-direction: column; align-items: flex-start; }
-    .cta-banner h3 { font-size: 22px; }
+    .hero-stack { display: none; }
+    .cta-banner { padding: 40px; }
+    .cta-banner h2 { font-size: 32px; }
   }
-  @media (max-width: 540px) {
-    .features, .products, .process, .post-grid { grid-template-columns: 1fr; }
-    .topbar .inner { display: none; }
+  @media (max-width: 600px) {
+    .pillars, .pgrid, .steps, .case-grid, footer .grid { grid-template-columns: 1fr; }
+    .pcard.feature { grid-column: auto; }
+    .wrap { padding: 0 20px; }
+    .process { margin: 0 16px; }
+    .hero h1 { font-size: 40px; }
   }
 </style>
 </head>
 <body>
 
-<!-- Top bar -->
-<div class="topbar">
-  <div class="inner">
-    <span>부산 동래구 · 사무기기 렌탈 전문 · 상담 가능 시간 09:00 - 18:00</span>
-    <span><a href="mailto:jmoffice051@naver.com">jmoffice051@naver.com</a></span>
-  </div>
-</div>
-
-<!-- GNB -->
 <header class="gnb">
-  <div class="inner">
-    <a href="#" class="logo">JM<span style="color:#14161B">OFFICE</span> <small>제이엠오피스</small></a>
-    <nav class="nav">
-      <a href="#about">회사소개</a>
-      <a href="#products">제품 소개</a>
-      <a href="#process">렌탈 절차</a>
-      <a href="#cases">설치 사례</a>
-      <a href="#contact">견적 문의</a>
-    </nav>
-    <a href="tel:051-939-7393" class="cta-phone">📞 051-939-7393</a>
-    <button class="menu-toggle" aria-label="menu">☰</button>
+  <div class="wrap">
+    <div class="inner">
+      <a href="#" class="brand">
+        <span class="dot">J</span>
+        <span>제이엠오피스 <small>· 부산 사무기기 렌탈</small></span>
+      </a>
+      <nav class="nav">
+        <a href="#about">왜 우리</a>
+        <a href="#products">렌탈 제품</a>
+        <a href="#process">렌탈 절차</a>
+        <a href="#cases">설치 후기</a>
+        <a href="#contact">견적 문의</a>
+      </nav>
+      <div class="gnb-cta">
+        <a href="#" class="btn btn-yellow">💬 카톡상담</a>
+        <a href="#contact" class="btn btn-primary">무료 견적 →</a>
+      </div>
+    </div>
   </div>
 </header>
 
-<!-- Hero -->
 <section class="hero">
-  <div class="container grid">
-    <div>
-      <span class="badge">부산 사무기기 렌탈 · B2B 전문</span>
-      <h1>사무기기 렌탈의 혁신,<br /><span class="accent">제이엠오피스</span></h1>
-      <p class="lead">
-        저가형 상품, 저렴한 렌탈이 아닌<br />
-        <span class="red">프리미엄 상품, 합리적 렌탈</span>을 제공합니다.<br />
-        <b>복사기 · 프린터 · 복합기</b> 임대/대여, 부산 전 지역 신속 설치.
-      </p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">무료 견적 문의 →</a>
-        <a href="#" class="btn btn-kakao">💬 카카오톡 상담</a>
-      </div>
-    </div>
-    <aside class="hero-card">
-      <h3>📞 빠른 상담</h3>
-      <div class="tel-big">051-939-7393</div>
-      <div class="tel-sub">대표 · 010-9273-7393 · 평일 09:00–18:00</div>
-      <div class="quick">
-        <a href="#" class="kakao">카카오톡 문의</a>
-        <a href="#contact" class="form">온라인 견적</a>
-      </div>
-    </aside>
-  </div>
-</section>
-
-<!-- Why us -->
-<section id="about">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Why JM Office</div>
-      <h2>왜 제이엠오피스를 선택해야 할까요?</h2>
-      <p>합리적인 가격에 프리미엄 사무환경을 만들어 드립니다.</p>
-    </div>
-    <div class="features">
-      <div class="feature">
-        <div class="icon">★</div>
-        <h4>프리미엄 장비</h4>
-        <p>인쇄 품질·내구성이 검증된 정품 장비만 제공합니다.</p>
-      </div>
-      <div class="feature">
-        <div class="icon">⚡</div>
-        <h4>부산 전 지역 신속 설치</h4>
-        <p>동래구 본사 기준, 부산 전역 당일~익일 설치 가능.</p>
-      </div>
-      <div class="feature">
-        <div class="icon">🛠</div>
-        <h4>유지보수 책임</h4>
-        <p>고장 시 출장 점검·소모품 교체까지 렌탈 기간 내내 책임집니다.</p>
-      </div>
-      <div class="feature">
-        <div class="icon">₩</div>
-        <h4>합리적인 비용</h4>
-        <p>초기 구매 부담 없이 월 단위 정액제로 예산 관리가 쉽습니다.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Products -->
-<section id="products" class="products-section">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Products</div>
-      <h2>렌탈 가능한 사무기기</h2>
-      <p>업무 환경에 딱 맞는 장비 구성을 도와드립니다.</p>
-    </div>
-    <div class="products">
-      <div class="product">
-        <div class="thumb">🖨️</div>
-        <div class="body">
-          <span class="tag">BEST</span>
-          <h4>복합기 렌탈</h4>
-          <p>인쇄·복사·스캔·팩스 일체형. 사무실 한 대로 모든 업무 처리.</p>
-          <a href="#contact" class="more">견적 문의 →</a>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="hero-badge"><span class="dot"></span> 지금 상담 가능 · 평일 09:00–18:00</span>
+        <h1>
+          사무실에 필요한 모든 것,<br />
+          <span class="acc">한 번에</span> <span class="underline">월 정액</span>으로.
+        </h1>
+        <p class="lead">
+          부산 동래에서 <b>복합기·복사기·프린터·PC·디스플레이</b>를
+          정품으로 공급하고, 설치부터 A/S까지 끝까지 책임지는
+          <b>B2B 사무기기 렌탈 전문점</b>입니다.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-accent">무료 견적 받기 →</a>
+          <a href="tel:051-939-7393" class="btn btn-ghost">📞 051·939·7393</a>
+          <span class="meta">평균 회신 24시간</span>
         </div>
       </div>
-      <div class="product">
-        <div class="thumb">📠</div>
-        <div class="body">
-          <span class="tag">POPULAR</span>
-          <h4>복사기 렌탈</h4>
-          <p>대용량 출력에 최적화. 월 수천 매 인쇄 사업장에 적합.</p>
-          <a href="#contact" class="more">견적 문의 →</a>
+
+      <div class="hero-stack">
+        <div class="hcard main">
+          <div class="label">★ 베스트 렌탈</div>
+          <div class="device">복합기 렌탈<br />가격은 문의주세요</div>
+          <p class="desc">A3 컬러까지, 인쇄·복사·스캔·팩스 일체. 사무실 한 대로 충분합니다.</p>
+          <div class="placeholder-img"><img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800&q=80&auto=format&fit=crop" alt="복합기" loading="lazy" onerror="this.src='https://picsum.photos/seed/jm-mfp/800/400'" /></div>
         </div>
-      </div>
-      <div class="product">
-        <div class="thumb">🖨</div>
-        <div class="body">
-          <span class="tag">소형 사무실</span>
-          <h4>프린터 렌탈</h4>
-          <p>흑백/컬러, 레이저/잉크젯 — 용도에 맞춰 추천드립니다.</p>
-          <a href="#contact" class="more">견적 문의 →</a>
+        <div class="hcard review">
+          <div class="stars">★★★★★</div>
+          <p>"설치 다음 날 토너 다 쓰고 전화드렸는데, 두 시간 만에 오셨어요. 사장님 정말 부지런하세요."</p>
+          <div class="who">— 부산 정관 OO공장</div>
+        </div>
+        <div class="hcard tel">
+          <div class="lab">대표 직통</div>
+          <div class="num">051·939·7393</div>
+          <div class="sub">평일 09:00~18:00</div>
+        </div>
+        <div class="hcard qty">
+          <div>
+            <div class="v">240<sub>+</sub></div>
+            <div class="l">현장 설치<br />레퍼런스</div>
+          </div>
+          <div style="height: 30px; width: 1px; background: var(--line);"></div>
+          <div>
+            <div class="v">8<sub>년</sub></div>
+            <div class="l">부산 사무기기<br />렌탈 운영</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Process -->
-<section id="process">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Process</div>
-      <h2>렌탈 절차는 간단합니다</h2>
-      <p>문의부터 설치까지 평균 1~3일이면 완료됩니다.</p>
-    </div>
-    <div class="process">
-      <div class="step">
-        <div class="num">1</div>
-        <h4>전화 / 카톡 문의</h4>
-        <p>업종·인원·필요 장비 알려주세요.</p>
+<section id="about" class="why">
+  <div class="wrap">
+    <span class="s-eyebrow"><span class="dot"></span> 왜 제이엠오피스</span>
+    <h2 class="s-title"><span class="uy">사무실의 든든한 동네 삼촌</span><br />이 되어드립니다.</h2>
+    <p class="s-sub">
+      대리점이 아니라 직접 운영합니다. 정품 장비만, 토너·드럼은 무상으로,
+      문제가 생기면 4시간 안에. 그래서 부산 240+ 현장이 8년째 함께하고 있습니다.
+    </p>
+
+    <div class="pillars">
+      <div class="pillar tinted-1">
+        <span class="pchip">★ PREMIUM</span>
+        <h4>정품 장비만 들입니다</h4>
+        <p>캐논·HP·삼성·신도리코 정품. 인쇄 품질과 부품 수급이 검증된 모델만 큐레이션합니다.</p>
+        <div class="pmetric">정품 브랜드 <b>4+</b></div>
       </div>
-      <div class="step">
-        <div class="num">2</div>
-        <h4>맞춤 견적 제공</h4>
-        <p>사용 환경에 맞는 장비를 추천드립니다.</p>
+      <div class="pillar">
+        <span class="pchip">🛠 RESPONSE</span>
+        <h4>A/S는 우리가 끝까지</h4>
+        <p>고장·소모품·드럼/유닛 교체까지 렌탈 기간 내내 추가 비용 없이 책임집니다.</p>
+        <div class="pmetric">평균 응답 <b>≤ 4시간</b></div>
       </div>
-      <div class="step">
-        <div class="num">3</div>
-        <h4>계약 및 설치</h4>
-        <p>당일~익일 출장 설치 진행합니다.</p>
+      <div class="pillar tinted-2">
+        <span class="pchip">₩ PREDICTABLE</span>
+        <h4>월 정액, 깔끔한 비용</h4>
+        <p>초기 구매 부담 없이 매달 같은 금액. 사용 환경에 맞춰 합리적으로 책정해드립니다.</p>
+        <div class="pmetric">가격은 <b>문의주세요</b></div>
       </div>
-      <div class="step">
-        <div class="num">4</div>
-        <h4>유지보수 시작</h4>
-        <p>렌탈 기간 동안 A/S 책임집니다.</p>
+      <div class="pillar">
+        <span class="pchip">🤝 CONSULT</span>
+        <h4>업종별 맞춤 컨설팅</h4>
+        <p>법무사·건설·학원·디자인 스튜디오·공장 — 출력 패턴부터 듣고 모델을 좁혀드립니다.</p>
+        <div class="pmetric">서비스 업종 <b>8+</b></div>
+      </div>
+      <div class="pillar tinted-3">
+        <span class="pchip">⚡ SPEED</span>
+        <h4>부산 전 지역, 1~2일</h4>
+        <p>본사 차고에 장비 상시 재고. 평균 견적-설치 리드타임 1.4일, 행사 단기는 당일 가능.</p>
+        <div class="pmetric">평균 리드타임 <b>1.4일</b></div>
+      </div>
+      <div class="pillar">
+        <span class="pchip">🏆 TRACK RECORD</span>
+        <h4>8년의 부산 레퍼런스</h4>
+        <p>벡스코·컨벤션센터·대학·호텔·선거사무실·제조 공장 등 부산 곳곳의 설치 사례.</p>
+        <div class="pmetric">활성 현장 <b>240+</b></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Cases / News -->
-<section id="cases" style="background: var(--bg-soft);">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">News &amp; Cases</div>
-      <h2>설치 사례 · 최근 소식</h2>
-      <p>현장 설치 후기와 사무기기 정보를 블로그에서 확인하세요. (자동 동기화)</p>
+<section id="products" class="products">
+  <div class="wrap">
+    <div class="head">
+      <span class="s-eyebrow"><span class="dot"></span> 렌탈 제품</span>
+      <h2 class="s-title">사무실에 필요한 <span class="acc">모든 장비</span>.</h2>
+      <p class="s-sub">한 군데서 복합기·PC·디스플레이까지. 패키지로 묶으면 더 합리적입니다.</p>
     </div>
-    <div class="post-tabs" id="post-tabs"></div>
-    <div class="post-grid" id="post-grid">
-      <div class="post-empty">불러오는 중…</div>
-    </div>
-    <div style="text-align:center; margin-top: 36px;">
-      <a href="https://blog.naver.com/jmoffice051" target="_blank" rel="noopener" class="btn btn-ghost">
-        블로그에서 더 보기 →
+    <div class="pgrid">
+      <a href="#contact" class="pcard feature">
+        <div class="pthumb">
+          <img class="pimg" src="https://images.unsplash.com/photo-1586953209448-b95a79798f07?w=900&q=80&auto=format&fit=crop" alt="복합기" loading="lazy" onerror="this.src='https://picsum.photos/seed/jm-mfp-feat/900/720'" />
+          <span class="ptag">★ BEST · 복합기</span>
+        </div>
+        <div class="pbody">
+          <h3>복합기 렌탈</h3>
+          <p>인쇄·복사·스캔·팩스 일체형. A3 컬러 모델까지, 사무실 한 대로 모든 문서 업무를 처리합니다.</p>
+          <div class="prow">
+            <span class="price">가격은 <b>문의주세요</b></span>
+            <span class="more">자세히 →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#contact" class="pcard col-2">
+        <div class="pthumb">
+          <img class="pimg" src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=80&auto=format&fit=crop" alt="복사기" loading="lazy" onerror="this.src='https://picsum.photos/seed/jm-copier/700/525'" />
+          <span class="ptag">POPULAR</span>
+        </div>
+        <div class="pbody">
+          <h3>복사기</h3>
+          <p>월 수천 매 대용량.</p>
+          <div class="prow"><span class="price">가격 <b>문의</b></span><span class="more">→</span></div>
+        </div>
+      </a>
+      <a href="#contact" class="pcard col-3">
+        <div class="pthumb">
+          <img class="pimg" src="https://images.unsplash.com/photo-1625961332071-c90fec659555?w=700&q=80&auto=format&fit=crop" alt="프린터" loading="lazy" onerror="this.src='https://picsum.photos/seed/jm-printer/700/525'" />
+          <span class="ptag">SOHO</span>
+        </div>
+        <div class="pbody">
+          <h3>프린터</h3>
+          <p>레이저/잉크젯, 흑백/컬러.</p>
+          <div class="prow"><span class="price">가격 <b>문의</b></span><span class="more">→</span></div>
+        </div>
+      </a>
+      <a href="#contact" class="pcard col-4">
+        <div class="pthumb">
+          <img class="pimg" src="https://images.unsplash.com/photo-1547082299-de196ea013d6?w=700&q=80&auto=format&fit=crop" alt="업무용 PC" loading="lazy" onerror="this.src='https://picsum.photos/seed/jm-pc/700/525'" />
+          <span class="ptag">B2B PC</span>
+        </div>
+        <div class="pbody">
+          <h3>업무용 PC</h3>
+          <p>모니터·주변기기 패키지 가능.</p>
+          <div class="prow"><span class="price">가격 <b>문의</b></span><span class="more">→</span></div>
+        </div>
+      </a>
+      <a href="#contact" class="pcard col-5">
+        <div class="pthumb">
+          <img class="pimg" src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=700&q=80&auto=format&fit=crop" alt="대형 디스플레이" loading="lazy" onerror="this.src='https://picsum.photos/seed/jm-display/700/525'" />
+          <span class="ptag">EVENT</span>
+        </div>
+        <div class="pbody">
+          <h3>대형 디스플레이</h3>
+          <p>행사·세미나 단기 대여.</p>
+          <div class="prow"><span class="price">가격 <b>문의</b></span><span class="more">→</span></div>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- CTA banner -->
-<section style="padding-top: 0;">
-  <div class="container">
-    <div class="cta-banner">
-      <div>
-        <h3>지금 문의하시면 무료 견적을 받아보실 수 있습니다.</h3>
-        <p>업종·인원만 알려주시면 최적 구성을 제안드립니다.</p>
-      </div>
-      <div class="actions">
-        <a href="tel:051-939-7393" class="btn btn-primary">📞 전화 상담</a>
-        <a href="#" class="btn btn-kakao">💬 카카오톡 문의</a>
+<section id="process">
+  <div class="process">
+    <div class="wrap">
+      <span class="s-eyebrow"><span class="dot"></span> 렌탈 절차</span>
+      <h2 class="s-title">전화 한 통으로 <span class="uy">평균 1.4일.</span></h2>
+      <p class="s-sub">복잡한 절차 없습니다. 듣고, 제안하고, 설치하고, 끝까지 책임집니다.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h4>전화·카톡 문의</h4>
+          <p>업종, 인원, 필요 장비를 편하게 말씀해주세요.</p>
+          <div class="ttime">하루 0일차</div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h4>맞춤 견적</h4>
+          <p>사용 환경에 맞는 후보 장비와 월 비용을 제안합니다.</p>
+          <div class="ttime">24시간 안</div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h4>계약·설치</h4>
+          <p>본사 차고에 상시 재고. 출장 설치·세팅·테스트까지.</p>
+          <div class="ttime">당일~익일</div>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h4>유지보수</h4>
+          <p>고장 4시간 응답. 토너·소모품 무상 교체.</p>
+          <div class="ttime">렌탈 기간 내내</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" style="background: var(--bg-soft);">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Contact</div>
-      <h2>견적 문의</h2>
-      <p>아래 양식을 작성해주시면 빠르게 연락드리겠습니다.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>제이엠오피스</h3>
-        <div class="info-row"><span class="label">대표자</span><span class="value">김재묵</span></div>
-        <div class="info-row"><span class="label">사업자번호</span><span class="value">863-04-01859</span></div>
-        <div class="info-row"><span class="label">주소</span><span class="value">부산광역시 동래구 연안로52번길 88, 1층</span></div>
-        <div class="info-row"><span class="label">전화</span><span class="value"><a href="tel:051-939-7393" style="color:var(--navy); font-weight:700;">051-939-7393</a> · 010-9273-7393</span></div>
-        <div class="info-row"><span class="label">이메일</span><span class="value"><a href="mailto:jmoffice051@naver.com" style="color:var(--navy);">jmoffice051@naver.com</a></span></div>
-        <div class="info-row"><span class="label">상담시간</span><span class="value">평일 09:00 - 18:00</span></div>
+<section id="cases" class="cases">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="s-eyebrow"><span class="dot"></span> 설치 후기</span>
+        <h2 class="s-title">부산 곳곳에<br /><span class="acc">제이엠 흔적</span>.</h2>
       </div>
-      <form class="inquiry" onsubmit="alert('시안입니다. 실제 운영 시 아임웹 폼 모듈로 연동됩니다.'); return false;">
-        <label>회사명 / 성함</label>
-        <input type="text" placeholder="예) ○○○법무사 / 홍길동" required />
+      <p class="s-sub">최근 부산에 설치한 장비들. 네이버 블로그에 자세한 후기가 자동으로 올라갑니다.</p>
+    </div>
+    <div class="case-tabs" id="post-tabs"></div>
+    <div class="case-grid" id="post-grid">
+      <div style="grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--ink-soft);">불러오는 중…</div>
+    </div>
+    <div style="margin-top: 40px; text-align: center;">
+      <a href="https://blog.naver.com/jmoffice051" target="_blank" rel="noopener" class="btn btn-ghost">블로그에서 더 보기 →</a>
+    </div>
+  </div>
+</section>
 
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="cta-banner">
+      <h2>지금 문의하면<br /><span class="acc">당일 회신</span> 드려요.</h2>
+      <div class="actions">
+        <a href="tel:051-939-7393" class="btn btn-accent">📞 051·939·7393</a>
+        <a href="#" class="btn btn-yellow">💬 카카오톡 상담</a>
+        <a href="#contact" class="btn btn-ghost" style="color: white; border-color: rgba(255,255,255,0.3);">온라인 견적 폼 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="s-eyebrow"><span class="dot"></span> 견적 문의</span>
+    <h2 class="s-title">사용 환경 <span class="uy">몇 줄</span>만 알려주세요.</h2>
+    <p class="s-sub" style="margin-bottom: 48px;">필요 대수, 사무실 위치, 사용 용도 — 영업일 24시간 안에 회신드립니다.</p>
+
+    <div class="grid">
+      <div class="info-card">
+        <h3>제이엠오피스</h3>
+        <p class="addr">부산광역시 동래구 연안로52번길 88, 1층</p>
+        <div class="info-row"><span class="k">대표</span><span class="v">김재묵</span></div>
+        <div class="info-row"><span class="k">전화</span><span class="v">051·939·7393</span></div>
+        <div class="info-row"><span class="k">휴대폰</span><span class="v">010·9273·7393</span></div>
+        <div class="info-row"><span class="k">이메일</span><span class="v">jmoffice051@naver.com</span></div>
+        <div class="info-row"><span class="k">상담시간</span><span class="v">평일 09:00 — 18:00</span></div>
+        <div class="info-row"><span class="k">사업자번호</span><span class="v">863-04-01859</span></div>
+        <div class="actions">
+          <a href="tel:051-939-7393" class="btn btn-primary">📞 전화 걸기</a>
+          <a href="#" class="btn btn-yellow">💬 카톡상담</a>
+        </div>
+      </div>
+
+      <form class="q" onsubmit="alert('시안입니다.'); return false;">
+        <h3>온라인 견적 요청</h3>
+        <label>회사명 / 성함</label>
+        <input type="text" placeholder="○○법무사 · 홍길동" required />
         <label>연락처</label>
         <input type="tel" placeholder="010-0000-0000" required />
-
         <label>관심 제품</label>
         <select>
-          <option>복합기</option>
-          <option>복사기</option>
-          <option>프린터</option>
+          <option>복합기</option><option>복사기</option><option>프린터</option>
+          <option>업무용 PC</option><option>디스플레이/TV</option>
           <option>두 가지 이상 (메시지에 작성)</option>
         </select>
-
         <label>문의 내용</label>
-        <textarea placeholder="필요 대수, 사무실 위치, 사용 용도 등 알려주시면 빠른 견적이 가능합니다." required></textarea>
-
-        <button type="submit">견적 요청하기</button>
+        <textarea placeholder="필요 대수, 사무실 위치, 사용 용도, 월 출력량 등을 알려주시면 더 정확한 견적이 가능합니다." required></textarea>
+        <button type="submit">견적 요청하기 →</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
-  <div class="container">
+  <div class="wrap">
     <div class="grid">
       <div>
         <h5>JM OFFICE · 제이엠오피스</h5>
-        <p class="biz-info">
-          "사무기기 렌탈의 혁신"<br />
-          저가형 상품이 아닌, 프리미엄 상품과<br />
-          합리적인 렌탈을 제공합니다.
-        </p>
+        <p class="colophon">저가형이 아닌, <span class="acc">프리미엄</span><br />합리적인 사무기기 렌탈.</p>
       </div>
       <div>
-        <h5>사업자 정보</h5>
-        <p class="biz-info">
-          상호 : 제이엠오피스<br />
-          대표자 : 김재묵<br />
-          사업자등록번호 : 863-04-01859<br />
-          주소 : 부산광역시 동래구 연안로52번길 88, 1층
-        </p>
+        <h5>제품</h5>
+        <ul>
+          <li>복합기 렌탈</li><li>복사기 렌탈</li><li>프린터 렌탈</li>
+          <li>업무용 PC</li><li>디스플레이/TV</li>
+        </ul>
+      </div>
+      <div>
+        <h5>회사</h5>
+        <ul>
+          <li>회사 소개</li><li>렌탈 절차</li><li>설치 사례</li><li>견적 문의</li>
+        </ul>
       </div>
       <div>
         <h5>고객센터</h5>
-        <p class="biz-info">
-          전화 : 051-939-7393<br />
-          휴대폰 : 010-9273-7393<br />
-          이메일 : jmoffice051@naver.com<br />
-          평일 09:00 - 18:00
-        </p>
+        <ul>
+          <li>051·939·7393</li><li>010·9273·7393</li>
+          <li>jmoffice051@naver.com</li><li>부산 동래구 연안로52번길 88</li>
+        </ul>
       </div>
     </div>
-    <div class="copyright">© 2026 JM Office. All rights reserved.</div>
+    <div class="baseline">
+      <span>© 2026 JM Office · All rights reserved.</span>
+      <span>사업자등록 863-04-01859 · 대표 김재묵</span>
+    </div>
   </div>
 </footer>
 
-<!-- Floating buttons -->
 <div class="floating">
-  <a href="#" class="float-kakao" title="카카오톡 문의">💬</a>
-  <a href="tel:051-939-7393" class="float-tel" title="전화 걸기">📞</a>
+  <a class="kakao" href="#"><span>💬</span> 카톡상담</a>
+  <a class="tel" href="tel:051-939-7393"><span>📞</span> 051·939·7393</a>
 </div>
 
+<script id="posts-fallback" type="application/json">
+{"posts":[
+{"title":"여름철 프린터 관리방법 제대로 알아두세요","category":"정보","thumbnail":"https://mblogthumb-phinf.pstatic.net/MjAyNjA1MDdfMTI5/MDAxNzc4MTIyNzMwOTIy.xu8qkYlh2CGaZOxMbAYjdlLgzrD608JRcke2AJLkLQMg.bRsmJV1gFPwvB9Au1Rb3V_AfLl7DLKfxwK62QiHAX5cg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300","date":1778122841733,"url":"https://blog.naver.com/jmoffice051/224277551193"},
+{"title":"부산 컴퓨터 장기렌탈 사무실 운영에 최적화된 장비 구성","category":"설치후기","thumbnail":"https://mblogthumb-phinf.pstatic.net/MjAyNjA0MjhfMzEg/MDAxNzc3MzU0NzgyMzU0.IRGmM0XsNB7V8kdHLqaEf_lT9MiCnWfF18fydHEKopQg._Ee7JiSq25fno5_I0F80NZxK6M2nEGQvWQrY_FGJvqQg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300","date":1777354793342,"url":"https://blog.naver.com/jmoffice051/224267971691"},
+{"title":"부산 건설사무실 복합기렌탈 A3 출력까지 가능한 최적의 제품으로","category":"설치후기","thumbnail":"https://mblogthumb-phinf.pstatic.net/MjAyNjA0MjRfNzIg/MDAxNzc2OTk5MTI0MzMy.oknyat7dEwga0jPqXMcR6YvPki4bcLCGSEJ_OMnnGXkg.X4OV4cY3lBULujZEbTz7k2GlKbmIx7y60pFIXm9Glisg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300","date":1776999215207,"url":"https://blog.naver.com/jmoffice051/224263498582"},
+{"title":"부산 정관 복합기렌탈 사무업무 환경 개선에 도움되는 최적의 모델들로 진행","category":"설치후기","thumbnail":"https://mblogthumb-phinf.pstatic.net/MjAyNjA0MjNfMjM4/MDAxNzc2OTA5MDgxNzQ4.Gh5WvbTo3XAdQqEkI0iOS4SNp2wDHSThJvrYVhlAh9og.i7xJZBE9BW60wew4jvCImwmpC7QN_OJxQuLme0ShGjgg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300","date":1776909163028,"url":"https://blog.naver.com/jmoffice051/224262212740"},
+{"title":"양산 복합기렌탈 사무실 가성비 좋은 캐논 MB2720 설치","category":"설치후기","thumbnail":"https://mblogthumb-phinf.pstatic.net/MjAyNjA0MjJfOTUg/MDAxNzc2ODMyMDA0OTYy.I4dm2esoB2U5zgkyY9ZVYEKMcsCx70t5tlqBHbLTSQgg.IoJyTVjr4JHmRULr1vB1W8BvVLL64gY_NWfbXiZ-I-sg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300","date":1776832061843,"url":"https://blog.naver.com/jmoffice051/224261157105"},
+{"title":"부산 사무용PC렌탈 센텀국제영화제 행사 장비 설치 걱정없이 쉽고 편하게","category":"설치후기","thumbnail":"https://mblogthumb-phinf.pstatic.net/MjAyNjA0MjFfOTMg/MDAxNzc2NzM4NTM3NTQ1.uKa13uZi6lqEdXhoyJWlTUo2r4_N5RZFBs_178uQQg8g.Cbo8oWvweve35nLHxXwpmowXNXTwpbyl6YFg7u2PJmUg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300","date":1776738568115,"url":"https://blog.naver.com/jmoffice051/224259765347"},
+{"title":"부산 금정구 사무기기렌탈 인테리어회사 디자인 장비 설치","category":"설치후기","thumbnail":"https://mblogthumb-phinf.pstatic.net/MjAyNjA0MjBfMjEg/MDAxNzc2NjUwODYyODgz.S5g3RFsXUQ6oVcTruF8J5SnLdsSc2jG_JSRyGo4VSGog.NqXR4MhCZYBOeSQBoIpJaobKZm05g3cgor6iMOCrxqcg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300","date":1776650938161,"url":"https://blog.naver.com/jmoffice051/224258470581"},
+{"title":"부산 컴퓨터렌탈 스타트업 사무실 고급 PC 5세트 설치","category":"설치후기","thumbnail":"https://mblogthumb-phinf.pstatic.net/MjAyNjA0MTdfMzMg/MDAxNzc2MzkyMjc3OTkx.RFyksOyDyns6jeQIVlitUjWTrfIzAeKDwRN6sYTQTpog.auooZq21fVdxog18snAhcNJ8Aa6NEcZIjFcbvwesACEg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300","date":1776392293674,"url":"https://blog.naver.com/jmoffice051/224255468186"},
+{"title":"경성대 게이밍컴퓨터렌탈 게임연구팀 장비 세팅 사례","category":"설치후기","thumbnail":"https://mblogthumb-phinf.pstatic.net/MjAyNjA0MTZfMTMy/MDAxNzc2MzA0MDk5ODY5.qCFPjSNBSYZHQjlpsIjdjSI9qh8AvDjLDyjYRlnwpOUg.7fUyEE6A2U2nB1VDDNMYLf39yb0IZTTCr0vcG5ZWrw0g.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300","date":1776304159085,"url":"https://blog.naver.com/jmoffice051/224254206264"}
+]}
+</script>
 <script>
 (async () => {
   const grid = document.getElementById('post-grid');
-  const tabsContainer = document.getElementById('post-tabs');
-  if (!grid || !tabsContainer) return;
-
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const tabs = document.getElementById('post-tabs');
+  if (!grid || !tabs) return;
+  function esc(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function fmt(ts) { if (!ts) return ''; const d = new Date(ts); return `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}`; }
+  function loadFallback() {
+    try { return JSON.parse(document.getElementById('posts-fallback').textContent); } catch (e) { return { posts: [] }; }
   }
-  function fmtDate(ts) {
-    if (!ts) return '';
-    const d = new Date(ts);
-    return `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}`;
+  async function loadData() {
+    try {
+      const res = await fetch('posts.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error('http ' + res.status);
+      return await res.json();
+    } catch (e) {
+      return loadFallback();
+    }
   }
-
   try {
-    const res = await fetch('posts.json', { cache: 'no-cache' });
-    if (!res.ok) throw new Error('Failed to load posts.json');
-    const data = await res.json();
+    const data = await loadData();
     const posts = (data.posts || []).filter(p => p.title);
-
-    const counts = {};
-    posts.forEach(p => {
-      const c = p.category || '기타';
-      counts[c] = (counts[c] || 0) + 1;
-    });
-    const cats = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
-
-    let activeCat = 'all';
-    const buildTab = (cat, label, count) => {
-      const btn = document.createElement('button');
-      btn.className = 'post-tab' + (cat === activeCat ? ' active' : '');
-      btn.dataset.cat = cat;
-      btn.textContent = `${label} (${count})`;
-      return btn;
+    if (!posts.length) throw new Error('empty');
+    const counts = {}; posts.forEach(p => { const c = p.category || '기타'; counts[c] = (counts[c]||0)+1; });
+    const cats = Object.keys(counts).sort((a,b) => counts[b]-counts[a]);
+    let active = 'all';
+    const buildTab = (k, label, n) => {
+      const b = document.createElement('button'); b.className = 'case-tab' + (k===active?' active':'');
+      b.dataset.k = k; b.textContent = `${label} (${n})`; return b;
     };
-    tabsContainer.appendChild(buildTab('all', '전체', posts.length));
-    cats.forEach(c => tabsContainer.appendChild(buildTab(c, c, counts[c])));
-
+    tabs.appendChild(buildTab('all', '전체', posts.length));
+    cats.forEach(c => tabs.appendChild(buildTab(c, c, counts[c])));
     function render() {
-      const list = activeCat === 'all' ? posts : posts.filter(p => p.category === activeCat);
-      if (!list.length) {
-        grid.innerHTML = '<div class="post-empty">표시할 글이 없습니다.</div>';
-        return;
-      }
+      const list = (active==='all' ? posts : posts.filter(p=>p.category===active)).slice(0, 9);
       grid.innerHTML = list.map(p => `
-        <a href="${escapeHtml(p.url)}" target="_blank" rel="noopener" class="post-card">
-          ${p.thumbnail
-            ? `<div class="thumb"><img src="${escapeHtml(p.thumbnail)}" alt="" loading="lazy"></div>`
-            : `<div class="thumb-placeholder">📝</div>`}
-          <div class="body">
-            ${p.category ? `<span class="cat">${escapeHtml(p.category)}</span>` : ''}
-            <h4>${escapeHtml(p.title)}</h4>
-            <p>${escapeHtml(p.brief)}…</p>
-            <span class="date">${fmtDate(p.date)}</span>
+        <a href="${esc(p.url)}" target="_blank" rel="noopener" class="case">
+          <div class="cthumb">${p.thumbnail?`<img src="${esc(p.thumbnail)}" alt="" loading="lazy">`:''}</div>
+          <div class="cbody">
+            <span class="ccat">${esc(p.category||'기타')}</span>
+            <h4>${esc(p.title)}</h4>
+            <div class="cdate">${fmt(p.date)}</div>
           </div>
         </a>
       `).join('');
     }
-
-    tabsContainer.addEventListener('click', (e) => {
-      const btn = e.target.closest('.post-tab');
-      if (!btn) return;
-      tabsContainer.querySelectorAll('.post-tab').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeCat = btn.dataset.cat;
-      render();
+    tabs.addEventListener('click', e => {
+      const b = e.target.closest('.case-tab'); if (!b) return;
+      tabs.querySelectorAll('.case-tab').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active'); active = b.dataset.k; render();
     });
-
     render();
-  } catch (err) {
-    console.error('Posts load failed:', err);
-    grid.innerHTML = '<div class="post-empty">블로그 데이터를 불러올 수 없습니다.</div>';
-    tabsContainer.style.display = 'none';
+  } catch (e) {
+    grid.innerHTML = '<div style="grid-column:1/-1;padding:40px;text-align:center;color:var(--ink-soft);">블로그 데이터를 불러올 수 없습니다.</div>';
+    tabs.style.display = 'none';
   }
 })();
 </script>
-
 </body>
 </html>
