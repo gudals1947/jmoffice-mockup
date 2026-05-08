@@ -383,6 +383,37 @@
   }
   form.q button:hover { background: #FF6620; }
 
+  /* Visit / Map */
+  .visit { padding-top: 0; }
+  .visit-card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 32px; overflow: hidden;
+    display: grid; grid-template-columns: 1.4fr 1fr;
+  }
+  .visit-map {
+    width: 100%; height: 100%; min-height: 420px;
+    border: 0; display: block; background: var(--bg-2);
+  }
+  .visit-body { padding: 36px 36px 32px; display: flex; flex-direction: column; gap: 4px; }
+  .visit-body .vchip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent-soft); padding: 5px 12px; border-radius: 999px;
+    font-size: 11px; font-weight: 700; color: var(--ink); width: fit-content;
+    margin-bottom: 10px; letter-spacing: 0.04em;
+  }
+  .visit-body h3 { margin: 0 0 6px; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+  .visit-body .addr { color: var(--ink-soft); margin: 0 0 22px; font-size: 15px; line-height: 1.55; }
+  .visit-body .addr b { color: var(--ink); font-weight: 700; }
+  .visit-body .vrow {
+    display: grid; grid-template-columns: 80px 1fr; gap: 12px;
+    padding: 12px 0; border-top: 1px dashed var(--line); align-items: baseline;
+  }
+  .visit-body .vrow:first-of-type { border-top: 0; padding-top: 0; }
+  .visit-body .vrow .k { font-size: 12px; color: var(--ink-soft); font-weight: 600; }
+  .visit-body .vrow .v { font-size: 14px; color: var(--ink); font-weight: 600; line-height: 1.5; }
+  .visit-body .map-actions { margin-top: 22px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .visit-body .map-actions .btn { padding: 11px 18px; font-size: 13px; }
+
   /* Footer */
   footer { padding: 64px 0 32px; }
   footer .grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
@@ -403,7 +434,8 @@
   .floating a.kakao { background: #FFE066; color: var(--ink); }
 
   @media (max-width: 960px) {
-    .hero .grid, .cases .head, .cta-banner, .contact .grid { grid-template-columns: 1fr; }
+    .hero .grid, .cases .head, .cta-banner, .contact .grid, .visit-card { grid-template-columns: 1fr; }
+    .visit-map { min-height: 320px; }
     .hero h1 { font-size: 48px; }
     .s-title { font-size: 36px; }
     .pillars, .pgrid, .steps, .case-grid, footer .grid { grid-template-columns: 1fr 1fr; }
@@ -437,6 +469,7 @@
         <a href="#process">렌탈 절차</a>
         <a href="#cases">설치 후기</a>
         <a href="#contact">견적 문의</a>
+        <a href="#visit">오시는 길</a>
       </nav>
       <div class="gnb-cta">
         <a href="#" class="btn btn-yellow">💬 카톡상담</a>
@@ -727,6 +760,36 @@
         <textarea placeholder="필요 대수, 사무실 위치, 사용 용도, 월 출력량 등을 알려주시면 더 정확한 견적이 가능합니다." required></textarea>
         <button type="submit">견적 요청하기 →</button>
       </form>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="visit">
+  <div class="wrap">
+    <span class="s-eyebrow"><span class="dot"></span> 오시는 길</span>
+    <h2 class="s-title">부산 동래 연안로 <span class="acc">52번길</span>.</h2>
+    <p class="s-sub" style="margin-bottom: 36px;">동래구청 인근, 주차 가능. 방문 전 전화 한 통이면 더 빠릅니다.</p>
+
+    <div class="visit-card">
+      <iframe
+        class="visit-map"
+        src="https://maps.google.com/maps?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%8F%99%EB%9E%98%EA%B5%AC%20%EC%97%B0%EC%95%88%EB%A1%9C52%EB%B2%88%EA%B8%B8%2088&z=16&hl=ko&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+      <div class="visit-body">
+        <span class="vchip">📍 본사 · 차고</span>
+        <h3>제이엠오피스</h3>
+        <p class="addr"><b>부산광역시 동래구</b><br />연안로52번길 88, 1층</p>
+        <div class="vrow"><span class="k">주차</span><span class="v">매장 앞 1대 + 인근 공영주차장</span></div>
+        <div class="vrow"><span class="k">대중교통</span><span class="v">동래역(1·4호선) 도보 12분 / 버스 동래교차로 정류장</span></div>
+        <div class="vrow"><span class="k">상담시간</span><span class="v">평일 09:00 — 18:00 · 주말 예약</span></div>
+        <div class="map-actions">
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%8F%99%EB%9E%98%EA%B5%AC%20%EC%97%B0%EC%95%88%EB%A1%9C52%EB%B2%88%EA%B8%B8%2088">네이버 지도 →</a>
+          <a class="btn btn-yellow" target="_blank" rel="noopener" href="https://map.kakao.com/?q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%8F%99%EB%9E%98%EA%B5%AC%20%EC%97%B0%EC%95%88%EB%A1%9C52%EB%B2%88%EA%B8%B8%2088">카카오맵 →</a>
+          <a class="btn btn-ghost" href="tel:051-939-7393">📞 전화</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
