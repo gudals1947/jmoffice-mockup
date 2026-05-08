@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>제이엠오피스 | 부산 사무기기 렌탈 전문</title>
+<meta name="description" content="부산 동래 사무기기 렌탈 전문 제이엠오피스. 복사기·프린터·복합기 임대/대여. 프리미엄 상품, 합리적 렌탈." />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  :root {
+    --navy: #1B3A8A;
+    --navy-deep: #0F2563;
+    --yellow: #FEE500;
+    --red: #E53935;
+    --bg: #FFFFFF;
+    --bg-soft: #F6F7FB;
+    --line: #E6E8EE;
+    --ink: #14161B;
+    --ink-soft: #555A66;
+    --radius: 14px;
+    --shadow: 0 6px 24px rgba(20, 30, 60, 0.06);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  /* Top bar */
+  .topbar {
+    background: var(--navy-deep);
+    color: #B7C4E8;
+    font-size: 13px;
+  }
+  .topbar .inner {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 24px; max-width: 1160px; margin: 0 auto;
+  }
+  .topbar a { color: #B7C4E8; }
+  .topbar a:hover { color: #fff; }
+
+  /* Header */
+  header.gnb {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .gnb .inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px; max-width: 1160px; margin: 0 auto; padding: 0 24px;
+  }
+  .logo {
+    display: flex; align-items: baseline; gap: 8px;
+    font-weight: 800; font-size: 26px; letter-spacing: -0.02em; color: var(--navy);
+  }
+  .logo small { font-size: 14px; color: var(--ink-soft); font-weight: 600; letter-spacing: 0; }
+  .nav { display: flex; gap: 28px; }
+  .nav a { color: var(--ink); font-weight: 600; font-size: 15px; }
+  .nav a:hover { color: var(--navy); }
+  .cta-phone {
+    background: var(--navy); color: #fff;
+    padding: 10px 18px; border-radius: 999px;
+    font-weight: 700; font-size: 14px;
+  }
+  .cta-phone:hover { background: var(--navy-deep); }
+  .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(60% 80% at 100% 0%, rgba(27,58,138,0.08), transparent 60%),
+      linear-gradient(180deg, #FAFBFF 0%, #FFFFFF 100%);
+    padding: 80px 0 64px;
+  }
+  .hero .grid {
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center;
+  }
+  .badge {
+    display: inline-block; background: #EEF2FF; color: var(--navy);
+    padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: 52px; line-height: 1.15; letter-spacing: -0.025em;
+    margin: 0 0 20px; font-weight: 800;
+  }
+  .hero h1 .accent { color: var(--navy); }
+  .hero p.lead {
+    font-size: 18px; color: var(--ink-soft); margin: 0 0 32px;
+  }
+  .hero p.lead b { color: var(--ink); font-weight: 700; }
+  .hero p.lead .red { color: var(--red); font-weight: 700; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 28px; border-radius: 12px; font-weight: 700; font-size: 16px;
+    transition: transform 0.05s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--navy); color: #fff; }
+  .btn-primary:hover { background: var(--navy-deep); }
+  .btn-kakao { background: var(--yellow); color: #181600; }
+  .btn-kakao:hover { background: #FFD600; }
+  .btn-ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+
+  .hero-card {
+    background: #fff; border: 1px solid var(--line); border-radius: 20px;
+    padding: 28px; box-shadow: var(--shadow);
+  }
+  .hero-card h3 { margin: 0 0 8px; font-size: 18px; color: var(--ink); }
+  .hero-card .tel-big {
+    font-size: 36px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em;
+    margin: 8px 0 4px;
+  }
+  .hero-card .tel-sub { color: var(--ink-soft); font-size: 14px; margin-bottom: 16px; }
+  .hero-card .quick { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hero-card .quick a {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    padding: 14px; border-radius: 10px; font-weight: 700; font-size: 14px;
+  }
+  .hero-card .quick .kakao { background: var(--yellow); color: #181600; }
+  .hero-card .quick .form { background: var(--navy); color: #fff; }
+
+  /* Section base */
+  section { padding: 80px 0; }
+  .section-head { text-align: center; margin-bottom: 48px; }
+  .section-head .eyebrow {
+    color: var(--navy); font-weight: 700; font-size: 14px; letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  .section-head h2 {
+    font-size: 36px; letter-spacing: -0.02em; margin: 0 0 12px; font-weight: 800;
+  }
+  .section-head p { color: var(--ink-soft); font-size: 16px; margin: 0; }
+
+  /* Why us */
+  .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .feature {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px 24px; transition: all 0.2s;
+  }
+  .feature:hover { border-color: var(--navy); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .feature .icon {
+    width: 48px; height: 48px; border-radius: 12px; background: #EEF2FF;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--navy); font-size: 22px; margin-bottom: 16px; font-weight: 800;
+  }
+  .feature h4 { margin: 0 0 8px; font-size: 17px; font-weight: 700; }
+  .feature p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+
+  /* Products */
+  .products-section { background: var(--bg-soft); }
+  .products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .product {
+    background: #fff; border-radius: var(--radius); overflow: hidden;
+    border: 1px solid var(--line); display: flex; flex-direction: column;
+    transition: all 0.2s;
+  }
+  .product:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .product .thumb {
+    height: 200px; background: linear-gradient(135deg, #E8EEF8 0%, #F5F7FB 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px; color: var(--navy);
+  }
+  .product .body { padding: 24px; }
+  .product h4 { margin: 0 0 8px; font-size: 19px; font-weight: 700; }
+  .product .tag { display: inline-block; background: #EEF2FF; color: var(--navy); padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 12px; }
+  .product p { margin: 0 0 16px; color: var(--ink-soft); font-size: 14px; }
+  .product .more { color: var(--navy); font-weight: 700; font-size: 14px; }
+
+  /* Process */
+  .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
+  .step {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px 20px; text-align: center; position: relative;
+  }
+  .step .num {
+    width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 800; margin-bottom: 14px;
+  }
+  .step h4 { margin: 0 0 6px; font-size: 16px; font-weight: 700; }
+  .step p { margin: 0; color: var(--ink-soft); font-size: 13px; }
+
+  /* CTA banner */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: #fff; border-radius: 24px; padding: 56px 48px;
+    display: flex; justify-content: space-between; align-items: center; gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cta-banner h3 { font-size: 28px; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.02em; }
+  .cta-banner p { margin: 0; color: #C9D2EA; }
+  .cta-banner .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .cta-banner .btn-primary { background: #fff; color: var(--navy); }
+  .cta-banner .btn-primary:hover { background: #F0F4FF; }
+
+  /* Contact form */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .contact-info h3 { margin: 0 0 16px; font-size: 22px; }
+  .info-row {
+    display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line);
+  }
+  .info-row:last-child { border-bottom: 0; }
+  .info-row .label { font-weight: 700; color: var(--navy); min-width: 80px; font-size: 14px; }
+  .info-row .value { color: var(--ink); font-size: 15px; }
+  form.inquiry {
+    background: var(--bg-soft); padding: 32px; border-radius: var(--radius);
+  }
+  form.inquiry label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  form.inquiry input, form.inquiry select, form.inquiry textarea {
+    width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px;
+    font-family: inherit; font-size: 15px; margin-bottom: 16px; background: #fff;
+  }
+  form.inquiry textarea { resize: vertical; min-height: 100px; }
+  form.inquiry input:focus, form.inquiry select:focus, form.inquiry textarea:focus {
+    outline: none; border-color: var(--navy);
+  }
+  form.inquiry button {
+    width: 100%; padding: 16px; background: var(--navy); color: #fff; border: 0;
+    border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;
+  }
+  form.inquiry button:hover { background: var(--navy-deep); }
+
+  /* Footer */
+  footer {
+    background: #0B1530; color: #B7C0DA; padding: 56px 0 32px;
+  }
+  footer .grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; }
+  footer h5 { color: #fff; margin: 0 0 16px; font-size: 16px; }
+  footer p, footer li { font-size: 14px; line-height: 1.8; margin: 0; }
+  footer ul { padding: 0; list-style: none; }
+  footer .biz-info { font-size: 13px; line-height: 1.7; }
+  footer .copyright {
+    margin-top: 40px; padding-top: 24px; border-top: 1px solid #1E2A4D;
+    text-align: center; font-size: 13px; color: #6E7AA0;
+  }
+
+  /* Floating */
+  .floating {
+    position: fixed; right: 20px; bottom: 20px; z-index: 100;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .floating a {
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); font-size: 22px;
+    transition: transform 0.15s;
+  }
+  .floating a:hover { transform: scale(1.05); }
+  .float-tel { background: var(--navy); color: #fff; }
+  .float-kakao { background: var(--yellow); color: #181600; }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .hero { padding: 56px 0 40px; }
+    .hero .grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero h1 { font-size: 36px; }
+    .nav { display: none; }
+    .cta-phone { display: none; }
+    .menu-toggle { display: block; }
+    section { padding: 56px 0; }
+    .section-head h2 { font-size: 28px; }
+    .features, .products, .process { grid-template-columns: 1fr 1fr; }
+    .contact-grid, footer .grid { grid-template-columns: 1fr; gap: 24px; }
+    .cta-banner { padding: 36px 24px; flex-direction: column; align-items: flex-start; }
+    .cta-banner h3 { font-size: 22px; }
+  }
+  @media (max-width: 540px) {
+    .features, .products, .process { grid-template-columns: 1fr; }
+    .topbar .inner { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="inner">
+    <span>부산 동래구 · 사무기기 렌탈 전문 · 상담 가능 시간 09:00 - 18:00</span>
+    <span><a href="mailto:jmoffice051@naver.com">jmoffice051@naver.com</a></span>
+  </div>
+</div>
+
+<!-- GNB -->
+<header class="gnb">
+  <div class="inner">
+    <a href="#" class="logo">JM<span style="color:#14161B">OFFICE</span> <small>제이엠오피스</small></a>
+    <nav class="nav">
+      <a href="#about">회사소개</a>
+      <a href="#products">제품 소개</a>
+      <a href="#process">렌탈 절차</a>
+      <a href="#cases">설치 사례</a>
+      <a href="#contact">견적 문의</a>
+    </nav>
+    <a href="tel:051-939-7393" class="cta-phone">📞 051-939-7393</a>
+    <button class="menu-toggle" aria-label="menu">☰</button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container grid">
+    <div>
+      <span class="badge">부산 사무기기 렌탈 · B2B 전문</span>
+      <h1>사무기기 렌탈의 혁신,<br /><span class="accent">제이엠오피스</span></h1>
+      <p class="lead">
+        저가형 상품, 저렴한 렌탈이 아닌<br />
+        <span class="red">프리미엄 상품, 합리적 렌탈</span>을 제공합니다.<br />
+        <b>복사기 · 프린터 · 복합기</b> 임대/대여, 부산 전 지역 신속 설치.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">무료 견적 문의 →</a>
+        <a href="#" class="btn btn-kakao">💬 카카오톡 상담</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h3>📞 빠른 상담</h3>
+      <div class="tel-big">051-939-7393</div>
+      <div class="tel-sub">대표 · 010-9273-7393 · 평일 09:00–18:00</div>
+      <div class="quick">
+        <a href="#" class="kakao">카카오톡 문의</a>
+        <a href="#contact" class="form">온라인 견적</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Why us -->
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Why JM Office</div>
+      <h2>왜 제이엠오피스를 선택해야 할까요?</h2>
+      <p>합리적인 가격에 프리미엄 사무환경을 만들어 드립니다.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="icon">★</div>
+        <h4>프리미엄 장비</h4>
+        <p>인쇄 품질·내구성이 검증된 정품 장비만 제공합니다.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">⚡</div>
+        <h4>부산 전 지역 신속 설치</h4>
+        <p>동래구 본사 기준, 부산 전역 당일~익일 설치 가능.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">🛠</div>
+        <h4>유지보수 책임</h4>
+        <p>고장 시 출장 점검·소모품 교체까지 렌탈 기간 내내 책임집니다.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">₩</div>
+        <h4>합리적인 비용</h4>
+        <p>초기 구매 부담 없이 월 단위 정액제로 예산 관리가 쉽습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products" class="products-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Products</div>
+      <h2>렌탈 가능한 사무기기</h2>
+      <p>업무 환경에 딱 맞는 장비 구성을 도와드립니다.</p>
+    </div>
+    <div class="products">
+      <div class="product">
+        <div class="thumb">🖨️</div>
+        <div class="body">
+          <span class="tag">BEST</span>
+          <h4>복합기 렌탈</h4>
+          <p>인쇄·복사·스캔·팩스 일체형. 사무실 한 대로 모든 업무 처리.</p>
+          <a href="#contact" class="more">견적 문의 →</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="thumb">📠</div>
+        <div class="body">
+          <span class="tag">POPULAR</span>
+          <h4>복사기 렌탈</h4>
+          <p>대용량 출력에 최적화. 월 수천 매 인쇄 사업장에 적합.</p>
+          <a href="#contact" class="more">견적 문의 →</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="thumb">🖨</div>
+        <div class="body">
+          <span class="tag">소형 사무실</span>
+          <h4>프린터 렌탈</h4>
+          <p>흑백/컬러, 레이저/잉크젯 — 용도에 맞춰 추천드립니다.</p>
+          <a href="#contact" class="more">견적 문의 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Process</div>
+      <h2>렌탈 절차는 간단합니다</h2>
+      <p>문의부터 설치까지 평균 1~3일이면 완료됩니다.</p>
+    </div>
+    <div class="process">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>전화 / 카톡 문의</h4>
+        <p>업종·인원·필요 장비 알려주세요.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>맞춤 견적 제공</h4>
+        <p>사용 환경에 맞는 장비를 추천드립니다.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>계약 및 설치</h4>
+        <p>당일~익일 출장 설치 진행합니다.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>유지보수 시작</h4>
+        <p>렌탈 기간 동안 A/S 책임집니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA banner -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="cta-banner">
+      <div>
+        <h3>지금 문의하시면 무료 견적을 받아보실 수 있습니다.</h3>
+        <p>업종·인원만 알려주시면 최적 구성을 제안드립니다.</p>
+      </div>
+      <div class="actions">
+        <a href="tel:051-939-7393" class="btn btn-primary">📞 전화 상담</a>
+        <a href="#" class="btn btn-kakao">💬 카카오톡 문의</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="background: var(--bg-soft);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Contact</div>
+      <h2>견적 문의</h2>
+      <p>아래 양식을 작성해주시면 빠르게 연락드리겠습니다.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>제이엠오피스</h3>
+        <div class="info-row"><span class="label">대표자</span><span class="value">김재묵</span></div>
+        <div class="info-row"><span class="label">사업자번호</span><span class="value">863-04-01859</span></div>
+        <div class="info-row"><span class="label">주소</span><span class="value">부산광역시 동래구 연안로52번길 88, 1층</span></div>
+        <div class="info-row"><span class="label">전화</span><span class="value"><a href="tel:051-939-7393" style="color:var(--navy); font-weight:700;">051-939-7393</a> · 010-9273-7393</span></div>
+        <div class="info-row"><span class="label">이메일</span><span class="value"><a href="mailto:jmoffice051@naver.com" style="color:var(--navy);">jmoffice051@naver.com</a></span></div>
+        <div class="info-row"><span class="label">상담시간</span><span class="value">평일 09:00 - 18:00</span></div>
+      </div>
+      <form class="inquiry" onsubmit="alert('시안입니다. 실제 운영 시 아임웹 폼 모듈로 연동됩니다.'); return false;">
+        <label>회사명 / 성함</label>
+        <input type="text" placeholder="예) ○○○법무사 / 홍길동" required />
+
+        <label>연락처</label>
+        <input type="tel" placeholder="010-0000-0000" required />
+
+        <label>관심 제품</label>
+        <select>
+          <option>복합기</option>
+          <option>복사기</option>
+          <option>프린터</option>
+          <option>두 가지 이상 (메시지에 작성)</option>
+        </select>
+
+        <label>문의 내용</label>
+        <textarea placeholder="필요 대수, 사무실 위치, 사용 용도 등 알려주시면 빠른 견적이 가능합니다." required></textarea>
+
+        <button type="submit">견적 요청하기</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="grid">
+      <div>
+        <h5>JM OFFICE · 제이엠오피스</h5>
+        <p class="biz-info">
+          "사무기기 렌탈의 혁신"<br />
+          저가형 상품이 아닌, 프리미엄 상품과<br />
+          합리적인 렌탈을 제공합니다.
+        </p>
+      </div>
+      <div>
+        <h5>사업자 정보</h5>
+        <p class="biz-info">
+          상호 : 제이엠오피스<br />
+          대표자 : 김재묵<br />
+          사업자등록번호 : 863-04-01859<br />
+          주소 : 부산광역시 동래구 연안로52번길 88, 1층
+        </p>
+      </div>
+      <div>
+        <h5>고객센터</h5>
+        <p class="biz-info">
+          전화 : 051-939-7393<br />
+          휴대폰 : 010-9273-7393<br />
+          이메일 : jmoffice051@naver.com<br />
+          평일 09:00 - 18:00
+        </p>
+      </div>
+    </div>
+    <div class="copyright">© 2026 JM Office. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Floating buttons -->
+<div class="floating">
+  <a href="#" class="float-kakao" title="카카오톡 문의">💬</a>
+  <a href="tel:051-939-7393" class="float-tel" title="전화 걸기">📞</a>
+</div>
+
+</body>
+</html>
