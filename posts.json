@@ -1,8 +1,19 @@
 {
-  "syncedAt": "2026-09-13T19:11:46.682Z",
+  "syncedAt": "2026-09-14T20:44:56.163Z",
   "blogId": "jmoffice051",
   "count": 79,
   "posts": [
+    {
+      "logNo": 224410899576,
+      "title": "복합기 스캔 안될 때 고장부터 의심하지 마세요",
+      "brief": "어제까지 잘 사용하던 복합기에서 갑자기 스캔이 되지 않으면 기계부터 고장 났다고 생각하기 쉽습니다. 출력과 복사는 정상적으로 되는데 스캔한 파일만 컴퓨터로 들어오지 않거나 전송 오류가 표시되기도 하는데요. 복합기 스캔 안될 때는 무작정 설정을 바꾸기보다 어디까지 정상적으로 작동하는지부터",
+      "category": "정보",
+      "subCategory": "정보",
+      "thumbnail": "https://mblogthumb-phinf.pstatic.net/MjAyNjA5MTRfMjQw/MDAxNzg5MzQ3NjQ5NTk2.lwymZ2zI-IIo7KUkEt07S4jBJ1mH7Gtul0wSeeaaXwQg.dROdpS08hdsX75qUBPe3fk71tbV4QrcuN-HwX1a66BUg.JPEG/cb107018642_l.jpg?type=ffn300_300",
+      "date": 1789347951169,
+      "url": "https://blog.naver.com/jmoffice051/224410899576",
+      "sympathyCnt": 0
+    },
     {
       "logNo": 224407994630,
       "title": "복합기 렌탈비용 계약 전에 꼭 확인해야 할 항목",
@@ -695,17 +706,6 @@
       "date": 1748481734778,
       "url": "https://blog.naver.com/jmoffice051/223881616413",
       "sympathyCnt": 5
-    },
-    {
-      "logNo": 223862848287,
-      "title": "복합기 용어 제대로 알고 선택하는 게 중요합니다",
-      "brief": "복합기를 구매하거나 임대하려고 할 때 가장 먼저 마주하는 어려움 중 하나는 생소한 용어들입니다. 잉크젯, 레이저, 무한잉크, 토너, 드럼 같은 단어들이 많이 등장하는데, 처음 접하시는 분들께는 이 용어들이 낯설고 복잡하게 느껴지는 것이 당연하지요. 하지만 복합기 용어만 제대로 이해해두면",
-      "category": "정보",
-      "subCategory": "정보",
-      "thumbnail": "https://mblogthumb-phinf.pstatic.net/MjAyNTA1MTJfMTQ5/MDAxNzQ3MDE5NTM0MzAx.86HtCZCi99zWZZV4FrUVD0SWAr4Fs2bQJdinXoA3yb8g.Lzqg_emUnXv-V3I5V5DkRN1YMJ5UR4EhrZNzSfmxU7kg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA---%C1%A4%BA%B8-%BA%B9%BB%E7-%C0%FC%B9%F8X.png?type=ffn300_300",
-      "date": 1747096200000,
-      "url": "https://blog.naver.com/jmoffice051/223862848287",
-      "sympathyCnt": 1
     },
     {
       "logNo": 223361507244,
