@@ -1,8 +1,19 @@
 {
-  "syncedAt": "2026-10-13T21:43:28.999Z",
+  "syncedAt": "2026-10-14T20:27:46.182Z",
   "blogId": "jmoffice051",
   "count": 79,
   "posts": [
+    {
+      "logNo": 224441144062,
+      "title": "복합기 스캔 파일 용량 줄이기 PDF 설정과 해상도 선택 방법",
+      "brief": "복합기에서 스캔한 PDF는 같은 분량의 문서라도 설정에 따라 파일 크기가 크게 달라집니다. 특히 기본 해상도가 높게 설정되어 있거나 컬러 스캔을 사용하면 일반적인 문서도 필요 이상으로 용량이 커질 수 있는데요. 이메일로 서류를 자주 주고받는 사무실이라면 스캔할 때마다 PDF를 별도로 압",
+      "category": "정보",
+      "subCategory": "정보",
+      "thumbnail": "https://mblogthumb-phinf.pstatic.net/MjAyNjEwMTRfMjQ1/MDAxNzkxOTQwMjYzNDYz.pmNA-Ak25Offv9gBYlg4K9rsCMgR1S0SlicJQ4vHfsEg.XMNfEDXmG3IYcOD3IFog4qEaZPqKE41ChvxQx9c7euAg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300",
+      "date": 1791940779428,
+      "url": "https://blog.naver.com/jmoffice051/224441144062",
+      "sympathyCnt": 0
+    },
     {
       "logNo": 224439926050,
       "title": "복합기 인쇄 품질 저하 글씨가 흐리고 줄이 생기는 이유",
@@ -695,17 +706,6 @@
       "date": 1761958800000,
       "url": "https://blog.naver.com/jmoffice051/224059959303",
       "sympathyCnt": 3
-    },
-    {
-      "logNo": 223959435104,
-      "title": "노트북 배터리 관리 우리가 놓치는 것들",
-      "brief": "노트북 배터리 관리 정말 중요하죠! 우리가 매일 쓰는 노트북인데 배터리 수명은 자꾸 줄어드는 것 같고 어떻게 관리해야 할지 막막하실때가 있으실텐데요. 몇 가지 간단한 습관만 들이면 노트북 배터리를 훨씬 더 오래 사용하실수 있답니다. 요즘 노트북은 데스크탑 못지않게 성능도 좋고 휴대성도 ",
-      "category": "정보",
-      "subCategory": "정보",
-      "thumbnail": "https://mblogthumb-phinf.pstatic.net/MjAyNTA4MDVfMjA0/MDAxNzU0MzU2NzczNTY1.bjO66geot_ZAlSEtJNZMbokjOLLvLRTaC1mphwRMae0g._mHluQxxPMEEy2xIXHXUu9LP8GVywgZQUd6_ykLC6wQg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA---%C8%AB%BA%B8-%C8%AD.png?type=ffn300_300",
-      "date": 1754357013263,
-      "url": "https://blog.naver.com/jmoffice051/223959435104",
-      "sympathyCnt": 0
     },
     {
       "logNo": 223361507244,
