@@ -1,8 +1,19 @@
 {
-  "syncedAt": "2026-10-14T20:27:46.182Z",
+  "syncedAt": "2026-10-15T20:10:19.438Z",
   "blogId": "jmoffice051",
   "count": 79,
   "posts": [
+    {
+      "logNo": 224442243825,
+      "title": "컴퓨터 부팅 속도 느려짐 원인과 윈도우 시작 속도 개선 방법",
+      "brief": "전원 버튼을 누른 뒤 바탕화면이 나타나기까지 시간이 얼마나 걸리시나요? 예전에는 금방 켜지던 컴퓨터가 어느 순간부터 부팅에 1~2분 이상 걸리기도 합니다. 윈도우 업데이트 이후 느려졌거나 바탕화면은 나타났는데 프로그램이 바로 실행되지 않는다면 원인을 구분해서 살펴봐야 합니다. 컴퓨터 부",
+      "category": "정보",
+      "subCategory": "정보",
+      "thumbnail": "https://mblogthumb-phinf.pstatic.net/MjAyNjEwMTVfMjA2/MDAxNzkyMDI0MzM2MTIw.Tss59s8uVoy6IhN_QlE3tSeTGvBg8KzP13OweIN5t9sg.M00I7IffxDrRMs47fzjGqViRPBjeKg-VI3UM6la1N_Mg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA.png?type=ffn300_300",
+      "date": 1792024347428,
+      "url": "https://blog.naver.com/jmoffice051/224442243825",
+      "sympathyCnt": 0
+    },
     {
       "logNo": 224441144062,
       "title": "복합기 스캔 파일 용량 줄이기 PDF 설정과 해상도 선택 방법",
@@ -695,17 +706,6 @@
       "date": 1762045200000,
       "url": "https://blog.naver.com/jmoffice051/224059962511",
       "sympathyCnt": 0
-    },
-    {
-      "logNo": 224059959303,
-      "title": "프린터 카트리지 에러 수명에 영향을 줄 수 있어",
-      "brief": "회사에서 업무를 할 때나 가정에서 출력을 해야 할 때 프린터기가 꼭 필요합니다. 이제는 어느 곳에서든 없어서는 안 되는 필수 장치로 자리매김을 한 만큼 생각보다 많은 비중으로 사용을 하게 됩니다. 이렇게 사용을 하는 도중 갑작스러운 변수를 만나서 당황을 하게 되는 경우가 많은데 그중 하",
-      "category": "정보",
-      "subCategory": "정보",
-      "thumbnail": "https://mblogthumb-phinf.pstatic.net/MjAyNTEwMzFfMTYz/MDAxNzYxODgyNDYwNzY0.eipSTVQyApT5ZWRpMGMtd-Y8GoakvfKrpsE7RsZtqp8g.oXRJYSuL5smfDq4V5_2MFL_1yME9-4I1DDaEcE1Vz6wg.PNG/%C1%A6%C0%CC%BF%A5%BF%C0%C7%C7%BD%BA-%C7%C1%B8%B0%C5%CD-%C4%AB%C6%AE%B8%AE%C1%F6-%BF%A1%B7%AF.png?type=ffn300_300",
-      "date": 1761958800000,
-      "url": "https://blog.naver.com/jmoffice051/224059959303",
-      "sympathyCnt": 3
     },
     {
       "logNo": 223361507244,
